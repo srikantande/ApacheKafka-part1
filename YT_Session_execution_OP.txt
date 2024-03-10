@@ -1,0 +1,341 @@
+SriLab ApacheKafka % date ; time docker build -t docker.io/dockersri83/alpineapachekafka:v1 -f ./Dockerfile . --no-cache
+Sun Mar 10 20:22:39 IST 2024
+[+] Building 34.0s (12/12) FINISHED                                                                               docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                              0.0s
+ => => transferring dockerfile: 485B                                                                                              0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                 0.0s
+ => => transferring context: 2B                                                                                                   0.0s
+ => CACHED [1/7] FROM docker.io/library/alpine:latest                                                                             0.0s
+ => CACHED https://dlcdn.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz                                                              0.1s
+ => [2/7] RUN apk update &&     apk upgrade --no-cache &&     apk add openjdk21-jre &&     apk add bash                          30.3s
+ => [3/7] RUN /bin/bash                                                                                                           0.3s 
+ => [4/7] WORKDIR /app                                                                                                            0.0s 
+ => [5/7] ADD https://dlcdn.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz /app                                                      0.3s 
+ => [6/7] RUN tar zxvf /app/kafka_2.13-3.7.0.tgz                                                                                  1.6s 
+ => [7/7] RUN rm -rfv /app/kafka_2.13-3.7.0.tgz                                                                                   0.4s 
+ => exporting to image                                                                                                            1.0s 
+ => => exporting layers                                                                                                           1.0s 
+ => => writing image sha256:e96afb09f2bea7bd59853bfff07d1703d43dbb02582044de868de61678b994b8                                      0.0s 
+ => => naming to docker.io/dockersri83/alpineapachekafka:v1                                                                       0.0s 
+                                                                                                                                       
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/smezgrbvtez4grfv940yawu9j
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+docker build -t docker.io/dockersri83/alpineapachekafka:v1 -f ./Dockerfile .   0.22s user 0.22s system 1% cpu 34.683 total
+SriLab ApacheKafka % date; time docker push docker.io/dockersri83/alpineapachekafka:v1
+Sun Mar 10 20:23:42 IST 2024
+The push refers to repository [docker.io/dockersri83/alpineapachekafka]
+d7088be38dd2: Pushed 
+4ba125eb3e9b: Pushed 
+654b879cea19: Pushed 
+c59be306ebe4: Pushed 
+944542ff68a6: Pushed 
+ff000381c4ff: Pushed 
+d4fc045c9e3a: Layer already exists 
+v1: digest: sha256:f2e449e9dd52f35b4109ccb3320d6307f96b724dc0c28d673b4c0c436121bea3 size: 1785
+docker push docker.io/dockersri83/alpineapachekafka:v1  0.11s user 0.09s system 0% cpu 3:24.25 total
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % date ; time docker build -t docker.io/dockersri83/alpineapachekafka:v1 -f ./Dockerfile . --no-cache
+Sun Mar 10 20:22:39 IST 2024
+[+] Building 34.0s (12/12) FINISHED                                                                               docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                              0.0s
+ => => transferring dockerfile: 485B                                                                                              0.0s
+ => [internal] load metadata for docker.io/library/alpine:latest                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                 0.0s
+ => => transferring context: 2B                                                                                                   0.0s
+ => CACHED [1/7] FROM docker.io/library/alpine:latest                                                                             0.0s
+ => CACHED https://dlcdn.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz                                                              0.1s
+ => [2/7] RUN apk update &&     apk upgrade --no-cache &&     apk add openjdk21-jre &&     apk add bash                          30.3s
+ => [3/7] RUN /bin/bash                                                                                                           0.3s 
+ => [4/7] WORKDIR /app                                                                                                            0.0s 
+ => [5/7] ADD https://dlcdn.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz /app                                                      0.3s 
+ => [6/7] RUN tar zxvf /app/kafka_2.13-3.7.0.tgz                                                                                  1.6s 
+ => [7/7] RUN rm -rfv /app/kafka_2.13-3.7.0.tgz                                                                                   0.4s 
+ => exporting to image                                                                                                            1.0s 
+ => => exporting layers                                                                                                           1.0s 
+ => => writing image sha256:e96afb09f2bea7bd59853bfff07d1703d43dbb02582044de868de61678b994b8                                      0.0s 
+ => => naming to docker.io/dockersri83/alpineapachekafka:v1                                                                       0.0s 
+                                                                                                                                       
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/smezgrbvtez4grfv940yawu9j
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+docker build -t docker.io/dockersri83/alpineapachekafka:v1 -f ./Dockerfile .   0.22s user 0.22s system 1% cpu 34.683 total
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % date; time docker push docker.io/dockersri83/alpineapachekafka:v1
+Sun Mar 10 20:23:42 IST 2024
+The push refers to repository [docker.io/dockersri83/alpineapachekafka]
+d7088be38dd2: Pushed 
+4ba125eb3e9b: Pushed 
+654b879cea19: Pushed 
+c59be306ebe4: Pushed 
+944542ff68a6: Pushed 
+ff000381c4ff: Pushed 
+d4fc045c9e3a: Layer already exists 
+v1: digest: sha256:f2e449e9dd52f35b4109ccb3320d6307f96b724dc0c28d673b4c0c436121bea3 size: 1785
+docker push docker.io/dockersri83/alpineapachekafka:v1  0.11s user 0.09s system 0% cpu 3:24.25 total
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 00Srilab-ApacheKafka-pv-pvc.yaml --dry-run=server
+persistentvolume/zkpv1 created (server dry run)
+persistentvolumeclaim/zkpvc1 created (server dry run)
+persistentvolume/akpv1 created (server dry run)
+persistentvolumeclaim/akpvc1 created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 00Srilab-ApacheKafka-pv-pvc.yaml                 
+persistentvolume/zkpv1 created
+persistentvolumeclaim/zkpvc1 created
+persistentvolume/akpv1 created
+persistentvolumeclaim/akpvc1 created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 10sriLab-zookeeper-cm.yaml --dry-run=server
+configmap/sri-zk-cm created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 10sriLab-zookeeper-cm.yaml                 
+configmap/sri-zk-cm created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl get cm
+NAME               DATA   AGE
+kube-root-ca.crt   1      3m17s
+sri-zk-cm          1      5s
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl describe configmap/sri-zk-cm
+Name:         sri-zk-cm
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+zookeeper.properties:
+----
+admin.enableServer=false
+clientPort=2181
+dataDir=/data/zookeeper
+maxClientCnxns=0
+
+BinaryData
+====
+
+Events:  <none>
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 11sriLab-zookeeper-deployment.yaml --dry-run=server
+deployment.apps/sri-zookeeper-deploy created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 11sriLab-zookeeper-deployment.yaml                 
+deployment.apps/sri-zookeeper-deploy created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 12sriLab-zookeeper-service.yaml --dry-run=server
+service/sri-zk-svc created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 12sriLab-zookeeper-service.yaml                 
+service/sri-zk-svc created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl get pod/sri-zookeeper-deploy-7cfc4dbcb6-p5v9b     
+NAME                                    READY   STATUS    RESTARTS   AGE
+sri-zookeeper-deploy-7cfc4dbcb6-p5v9b   1/1     Running   0          2m54s
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl logs pod/sri-zookeeper-deploy-7cfc4dbcb6-p5v9b | tail
+[2024-03-10 20:42:35,381] INFO zookeeper.commitLogCount=500 (org.apache.zookeeper.server.ZKDatabase)
+[2024-03-10 20:42:35,387] INFO zookeeper.snapshot.compression.method = CHECKED (org.apache.zookeeper.server.persistence.SnapStream)
+[2024-03-10 20:42:35,387] INFO Snapshotting: 0x0 to /data/zookeeper/version-2/snapshot.0 (org.apache.zookeeper.server.persistence.FileTxnSnapLog)
+[2024-03-10 20:42:35,481] INFO Snapshot loaded in 100 ms, highest zxid is 0x0, digest is 1371985504 (org.apache.zookeeper.server.ZKDatabase)
+[2024-03-10 20:42:35,482] INFO Snapshotting: 0x0 to /data/zookeeper/version-2/snapshot.0 (org.apache.zookeeper.server.persistence.FileTxnSnapLog)
+[2024-03-10 20:42:35,483] INFO Snapshot taken in 1 ms (org.apache.zookeeper.server.ZooKeeperServer)
+[2024-03-10 20:42:35,586] INFO PrepRequestProcessor (sid:0) started, reconfigEnabled=false (org.apache.zookeeper.server.PrepRequestProcessor)
+[2024-03-10 20:42:35,586] INFO zookeeper.request_throttler.shutdownTimeout = 10000 ms (org.apache.zookeeper.server.RequestThrottler)
+[2024-03-10 20:42:35,783] INFO Using checkIntervalMs=60000 maxPerMinute=10000 maxNeverUsedIntervalMs=0 (org.apache.zookeeper.server.ContainerManager)
+[2024-03-10 20:42:35,784] INFO ZooKeeper audit is disabled. (org.apache.zookeeper.audit.ZKAuditProvider)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % cat /etc/hosts
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+127.0.0.1	srilab.edu
+127.0.0.1	jnkssvc.default.svc.cluster.local
+127.0.0.1	sonarqubesvc.default.svc.cluster.local
+127.0.0.1	promsvc.default.svc.cluster.local
+127.0.0.1	statemetrics-sri-svc.default.svc.cluster.local
+127.0.0.1	grafsvc.default.svc.cluster.local
+127.0.0.1	quickstart-es-http.default.svc.cluster.local
+127.0.0.1	quickstart-kb-http.default.svc.cluster.local
+127.0.0.1	srilabjbosssvc.default.svc.cluster.local
+127.0.0.1       sri-zk-svc.default.svc.cluster.local
+127.0.0.1	sri-ak-svc.default.svc.cluster.local
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 20sriLab-apachekafka-cm.yaml --dry-run=server
+configmap/sri-apakaf-cm created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 20sriLab-apachekafka-cm.yaml                 
+configmap/sri-apakaf-cm created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl get cm
+NAME               DATA   AGE
+kube-root-ca.crt   1      18m
+sri-apakaf-cm      3      8s
+sri-zk-cm          1      15m
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl describe cm sri-apakaf-cm
+Name:         sri-apakaf-cm
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Data
+====
+entrypoint.sh:
+----
+echo "#############################"
+cat /app/kafka_2.13-3.7.0/config/server-0.properties
+/app/kafka_2.13-3.7.0/bin/kafka-server-start.sh /app/kafka_2.13-3.7.0/config/server-0.properties &
+sleep 15
+echo "#############################"
+cat /app/kafka_2.13-3.7.0/config/server-1.properties
+/app/kafka_2.13-3.7.0/bin/kafka-server-start.sh /app/kafka_2.13-3.7.0/config/server-1.properties &
+echo "#############################"
+sleep infinity
+server-0.properties:
+----
+broker.id=0
+listeners=PLAINTEXT://:9092
+advertised.listeners=PLAINTEXT://sri-ak-svc.default.svc.cluster.local:9092
+group.initial.rebalance.delay.ms=0
+log.dir=/data/kafka-0-log
+log.dirs=/data/kafka-0-logs
+log.retention.check.interval.ms=300000
+log.retention.hours=168
+num.io.threads=8
+num.network.threads=3
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+socket.send.buffer.bytes=102400
+transaction.state.log.min.isr=1
+transaction.state.log.replication.factor=1
+zookeeper.connect=sri-zk-svc.default.svc.cluster.local:2181
+zookeeper.connection.timeout.ms=18000
+server-1.properties:
+----
+broker.id=1
+listeners=PLAINTEXT://:9192
+advertised.listeners=PLAINTEXT://sri-ak-svc.default.svc.cluster.local:9192
+group.initial.rebalance.delay.ms=0
+log.dir=/data/kafka-1-log
+log.dirs=/data/kafka-1-logs
+log.retention.check.interval.ms=300000
+log.retention.hours=168
+num.io.threads=8
+num.network.threads=3
+num.partitions=3
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+socket.send.buffer.bytes=102400
+transaction.state.log.min.isr=1
+transaction.state.log.replication.factor=1
+zookeeper.connect=sri-zk-svc.default.svc.cluster.local:2181
+zookeeper.connection.timeout.ms=18000
+
+BinaryData
+====
+
+Events:  <none>
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 21sriLab-apachekafka-svc-deply.yaml --dry-run=server
+service/sri-ak-svc created (server dry run)
+deployment.apps/sri-apakaf-deploy created (server dry run)
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl apply -f 21sriLab-apachekafka-svc-deply.yaml                 
+service/sri-ak-svc created
+deployment.apps/sri-apakaf-deploy created
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % kubectl get all -o wide
+NAME                                        READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+pod/sri-apakaf-deploy-7df77dbd7c-vj9xc      1/1     Running   0          5s    10.244.1.3   minikube-m02   <none>           <none>
+pod/sri-zookeeper-deploy-7cfc4dbcb6-p5v9b   1/1     Running   0          17m   10.244.1.2   minikube-m02   <none>           <none>
+
+NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE   SELECTOR
+service/kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP                         26m   <none>
+service/sri-ak-svc   LoadBalancer   10.105.58.106   127.0.0.1     9092:31294/TCP,9192:32496/TCP   5s    apachekafka.component.akdeploy=sri-ak-dplmnt
+service/sri-zk-svc   LoadBalancer   10.105.48.9     127.0.0.1     2181:31735/TCP                  15m   apachekafka.component.zkdeploy=sri-zk-dplmnt
+
+NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS      IMAGES                                       SELECTOR
+deployment.apps/sri-apakaf-deploy      1/1     1            1           5s    sri-apakaf      docker.io/dockersri83/alpineapachekafka:v1   apachekafka.component.akdeploy=sri-ak-dplmnt
+deployment.apps/sri-zookeeper-deploy   1/1     1            1           17m   sri-zookeeper   docker.io/dockersri83/alpineapachekafka:v1   apachekafka.component.zkdeploy=sri-zk-dplmnt
+
+NAME                                              DESIRED   CURRENT   READY   AGE   CONTAINERS      IMAGES                                       SELECTOR
+replicaset.apps/sri-apakaf-deploy-7df77dbd7c      1         1         1       5s    sri-apakaf      docker.io/dockersri83/alpineapachekafka:v1   apachekafka.component.akdeploy=sri-ak-dplmnt,pod-template-hash=7df77dbd7c
+replicaset.apps/sri-zookeeper-deploy-7cfc4dbcb6   1         1         1       17m   sri-zookeeper   docker.io/dockersri83/alpineapachekafka:v1   apachekafka.component.zkdeploy=sri-zk-dplmnt,pod-template-hash=7cfc4dbcb6
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-topics.sh --create --topic sri-b0-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9092
+Created topic sri-b0-topic1.
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-topics.sh --create --topic sri-b1-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9192
+Created topic sri-b1-topic1.
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-topics.sh --describe --topic sri-b0-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9092
+Topic: sri-b0-topic1	TopicId: cHJm7iQiQcq4pJbM0fS5pQ	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: sri-b0-topic1	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-topics.sh --describe --topic sri-b1-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9192 
+Topic: sri-b1-topic1	TopicId: T4TeRbO1Rhe47GT9u5e3YQ	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: sri-b1-topic1	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-console-producer.sh --topic sri-b1-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9192
+This is msg to >^R 
+This is msg to broker1 topic1
+>^C%                                                                                                                                   
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-console-producer.sh --topic sri-b0-topic1 --bootstrap-server sri-ak-svc.default.svc.cluster.local:9092
+This is msg >to broker0 topic1
+>^C%                                                                                                                                   
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --topic sri-b0-topic1 --from-beginning --bootstrap-server sri-ak-svc.default.svc.cluster.local:9092
+This is msg to broker0 topic1
+^CProcessed a total of 1 messages
+SriLab ApacheKafka %
+
+SriLab ApacheKafka % sh kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --topic sri-b0-topic1 --from-beginning --bootstrap-server sri-ak-svc.default.svc.cluster.local:9092
+This is msg to broker0 topic1
+^CProcessed a total of 1 messages
+SriLab ApacheKafka %
+

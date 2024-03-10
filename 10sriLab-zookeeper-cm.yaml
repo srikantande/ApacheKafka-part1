@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sri-zk-cm
+  namespace: default
+data:
+  zookeeper.properties: |-
+    admin.enableServer=false
+    clientPort=2181
+    dataDir=/data/zookeeper
+    maxClientCnxns=0

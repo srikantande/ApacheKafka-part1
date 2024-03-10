@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sri-zk-svc
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+  - name: zk2181
+    port: 2181
+    targetPort: zk2181
+  selector:
+    apachekafka.component.zkdeploy: sri-zk-dplmnt

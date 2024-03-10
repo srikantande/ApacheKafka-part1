@@ -1,0 +1,60 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sri-apakaf-cm
+  namespace: default
+data:
+  entrypoint.sh: |-
+   echo "#############################"
+   cat /app/kafka_2.13-3.7.0/config/server-0.properties
+   /app/kafka_2.13-3.7.0/bin/kafka-server-start.sh /app/kafka_2.13-3.7.0/config/server-0.properties &
+   sleep 15
+   echo "#############################"
+   cat /app/kafka_2.13-3.7.0/config/server-1.properties
+   /app/kafka_2.13-3.7.0/bin/kafka-server-start.sh /app/kafka_2.13-3.7.0/config/server-1.properties &
+   echo "#############################"
+   sleep infinity
+  server-0.properties: |-
+    broker.id=0
+    listeners=PLAINTEXT://:9092
+    advertised.listeners=PLAINTEXT://sri-ak-svc.default.svc.cluster.local:9092
+    group.initial.rebalance.delay.ms=0
+    log.dir=/data/kafka-0-log
+    log.dirs=/data/kafka-0-logs
+    log.retention.check.interval.ms=300000
+    log.retention.hours=168
+    num.io.threads=8
+    num.network.threads=3
+    num.partitions=1
+    num.recovery.threads.per.data.dir=1
+    offsets.topic.replication.factor=1
+    socket.receive.buffer.bytes=102400
+    socket.request.max.bytes=104857600
+    socket.send.buffer.bytes=102400
+    transaction.state.log.min.isr=1
+    transaction.state.log.replication.factor=1
+    zookeeper.connect=sri-zk-svc.default.svc.cluster.local:2181
+    zookeeper.connection.timeout.ms=18000
+
+  server-1.properties: |-
+    broker.id=1
+    listeners=PLAINTEXT://:9192
+    advertised.listeners=PLAINTEXT://sri-ak-svc.default.svc.cluster.local:9192
+    group.initial.rebalance.delay.ms=0
+    log.dir=/data/kafka-1-log
+    log.dirs=/data/kafka-1-logs
+    log.retention.check.interval.ms=300000
+    log.retention.hours=168
+    num.io.threads=8
+    num.network.threads=3
+    num.partitions=3
+    num.recovery.threads.per.data.dir=1
+    offsets.topic.replication.factor=1
+    socket.receive.buffer.bytes=102400
+    socket.request.max.bytes=104857600
+    socket.send.buffer.bytes=102400
+    transaction.state.log.min.isr=1
+    transaction.state.log.replication.factor=1
+    zookeeper.connect=sri-zk-svc.default.svc.cluster.local:2181
+    zookeeper.connection.timeout.ms=18000
+

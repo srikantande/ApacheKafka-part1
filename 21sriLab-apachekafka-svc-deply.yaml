@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sri-ak-svc
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+  - name: ak9092
+    port: 9092
+    targetPort: ak9092
+  - name: ak9192
+    port: 9192
+    targetPort: ak9192
+  selector:
+    apachekafka.component.akdeploy: sri-ak-dplmnt
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    apachekafka.component.akdeploy: sri-ak-dplmnt
+  name: sri-apakaf-deploy
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      apachekafka.component.akdeploy: sri-ak-dplmnt
+  template:
+    metadata:
+      labels:
+        apachekafka.component.akdeploy: sri-ak-dplmnt
+    spec:
+      volumes:
+      - name: ak-data
+        persistentVolumeClaim:
+          claimName: akpvc1
+      - name: ak-server-props
+        configMap:
+          name: sri-apakaf-cm
+          items:
+          - key: "server-0.properties"
+            path: "server-0.properties"
+          - key: "server-1.properties"
+            path: "server-1.properties"
+          - key: "entrypoint.sh"
+            path: "entrypoint.sh"
+      containers:
+      - image: docker.io/dockersri83/alpineapachekafka:v1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - name: ak-data
+          mountPath: /data
+        - name: ak-server-props
+          mountPath: "/app/kafka_2.13-3.7.0/config/server-0.properties"
+          subPath: "server-0.properties"
+        - name: ak-server-props
+          mountPath: "/app/kafka_2.13-3.7.0/config/server-1.properties"
+          subPath: "server-1.properties"
+        - name: ak-server-props
+          mountPath: "/app/kafka_2.13-3.7.0/bin/entrypoint.sh"
+          subPath: "entrypoint.sh"
+        name: sri-apakaf
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "50m"
+          limits:
+            memory: "768Mi"
+            cpu: "400m"
+        env:
+        - name: KAFKA_HEAP_OPTS
+          value: "-Xms128M -Xmx256M"
+        - name: TZ
+          value: Asia/Kolkata
+#        command: [ "sleep" ]
+#        args: [ "infinity" ]
+        command: [ "/bin/sh" ]
+        args: [ "/app/kafka_2.13-3.7.0/bin/entrypoint.sh"]
+        ports:
+        - containerPort: 9092
+          name: ak9092
+        - containerPort: 9192
+          name: ak9192
